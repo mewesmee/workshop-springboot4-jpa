@@ -1,4 +1,4 @@
-package com.educandoweb.course.entities.enumns;
+package com.educandoweb.course.entities.enums;
 
 public enum OrderStatus {
 	
@@ -19,7 +19,7 @@ public enum OrderStatus {
 	}
 	
 	public static OrderStatus valueOf(int code) {
-		for (OrderStatus value : orderStatus.values()) {
+		for (OrderStatus value : OrderStatus.values()) {
 			if (value.getCode() == code) {
 				return value;
 			}
