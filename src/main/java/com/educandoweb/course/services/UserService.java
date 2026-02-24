@@ -11,14 +11,14 @@ import com.educandoweb.course.repositories.UserRepository;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository repository;
-	
+
 	public List<User> findAll() {
 		return repository.findAll();
 	}
-	
+
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
@@ -34,13 +34,13 @@ public class UserService {
 	
 	public User update(Long id, User obj) {
 		User entity = repository.getReferenceById(id);
-		updateDate(entity, obj);
+		updateData(entity, obj);
 		return repository.save(entity);
 	}
-	
+
 	private void updateData(User entity, User obj) {
 		entity.setName(obj.getName());
-		entity.setEmail(obj.setEmail());
+		entity.setEmail(obj.getEmail());
 		entity.setPhone(obj.getPhone());
 	}
 }
